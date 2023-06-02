@@ -1,0 +1,5 @@
+singleton Constants 1.0 Constants.qml
+singleton Themes 1.0 Themes.qml
+singleton Car3dControl 1.0 Car3dControl.qml
+singleton ClockController 1.0 ClockController.qml
+EventListSimulator 1.0 EventListSimulator.qml
