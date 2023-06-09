@@ -3,13 +3,13 @@ import QtGraphicalEffects 1.0
 
 Item {
     id: driveMode
-    width: 88
-    height: 46
+    width:Math.round(mainwind.width * 0.046) //88
+    height: Math.round(mainwind.width * 0.024)//46
     property int currentDriveMode: 0
 
     Item {
         id: driveModeItem
-        height: 23
+        height: Math.round(driveMode.height/2)
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: parent.top
@@ -29,8 +29,8 @@ Item {
             x: 0
             y: 0
 
-            width: 65
-            height: 44
+            width: Math.round(driveMode.height * 1.48)//65
+            height: driveMode.height //44
             color: "#d3d3d3"
             font.pixelSize: 18
             horizontalAlignment: Text.AlignLeft
@@ -45,7 +45,7 @@ Item {
             id: mask
             y: 0
 
-            height: 23
+            height: Math.round(driveMode.height/2)//23
             visible: false
             anchors.left: parent.left
             anchors.right: parent.right

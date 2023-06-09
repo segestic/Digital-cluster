@@ -8,19 +8,14 @@ import "Road"
 import "Car"
 import "Car_NPC"
 
-//import Quick3DAssets.Road 1.0
-//import Quick3DAssets.Car 1.0
-//import Quick3DAssets.Car_NPC 1.0
-//import Quick3DAssets.Coupe 1.0
-
 import QtQuick3D.Materials 1.15
 import QtQuick3D.Effects 1.15
 
 
 Item {
     id: adas
-    width: 856
-    height: 408
+    width: Math.round(mainwind.width * 0.446)//856
+    height: Math.round(mainwind.width * 0.213) //408
     property alias adasTimelineCurrentFrame: adasTimeline.currentFrame
     property bool viewTopBot: true
 

@@ -5,29 +5,15 @@ import "../../imports"
 
 Item {
     id: speedGauge
-    width: 720
-    height: 720
+    width: Math.round(mainwind.width * 0.375)//720
+    height: Math.round(mainwind.width * 0.375)//720
     property real speed: 0
-
-//    Keys.onRightPressed: { increaseSpeed() }
-//    Keys.onLeftPressed: { decreaseSpeed() }
-    //property alias increase:  increaseSpeed()
-
-
-//    Component.onCompleted: {
-//        forceActiveFocus()
-//        //increaseSpeed()
-//        //timer.startTimer(increaseSpeed, 120)
-//    }
 
     function increaseSpeed() {
         if (newSpeedNeedle.value <= 199) {
             speedGauge.speed += 1
             newSpeedNeedle.value = speedGauge.speed
         }
-//        else {
-//            newSpeedNeedle.value -= 10
-//        }
     }
 
     function decreaseSpeed() {
@@ -37,21 +23,12 @@ Item {
         }
     }
 
-
-
-
-//    ColorOverlay {
-//        id: colorOverlay
-//        color: "#80fff000"
-//    }
-
-
     Image {
         id: speedBlobShadow1
         x: 92
         y: 604
-        width: 356
-        height: 32
+        width: Math.round(mainwind.width * 0.185)//356
+        height: Math.round(mainwind.width * 0.017)//32
         visible: true
         source: "qrc:/content/assets/blob-shadow.png"
     }
@@ -63,29 +40,37 @@ Item {
         source: "qrc:/content/assets/SpeedGaugeAssetEmpty.png"
         width: Math.round(mainwind.width * 0.286)//549
         height: Math.round(mainwind.width * 0.283)//545
+
+        CircularNeedle {
+            id: newSpeedNeedle
+            source: "qrc:/content/assets/needleCoolMode.png"
+            visible: true
+            anchors.horizontalCenter: newSpeed.horizontalCenter
+            anchors.top: parent.top
+            anchors.topMargin: -80//-Math.round(mainwind.width * 0.417)//-80
+            //anchors.verticalCenter: newSpeed.verticalCenter
+            //x: 301
+            //y: 20
+            value: speedGauge.speed
+            tranformOriginX: newSpeedNeedle.width / 2 + 4
+            tranformOriginY: newSpeedNeedle.height + 57
+            minAngleDegree: -133
+            maxAngleDegree: 136
+            minValue: 0
+            maxValue: 200
+            width: Math.round(mainwind.width * 0.0672) //129
+            height: Math.round(mainwind.width * 0.154) //295
+        }
     }
 
-    CircularNeedle {
-        id: newSpeedNeedle
-        source: "qrc:/content/assets/needleCoolMode.png"
-        visible: true
-        x: 301
-        y: 20
-        value: speedGauge.speed
-        tranformOriginX: newSpeedNeedle.width / 2 + 4
-        tranformOriginY: newSpeedNeedle.height + 57
-        minAngleDegree: -133
-        maxAngleDegree: 136
-        minValue: 0
-        maxValue: 200
-    }
+
 
     SpeedBlob {
         id: speedBlob
         x: 30
         y: 19
-        width: 674
-        height: 720
+        width: Math.round(mainwind.width * 0.351) //674
+        height: Math.round(mainwind.width * 0.375) //720
         opacity: 1
         visible: false
         speed: 10
@@ -93,21 +78,22 @@ Item {
 
     Item {
         id: speed
-        x: 263
-        y: 318
-        width: 208
-        height: 122
-        anchors.horizontalCenter: parent.horizontalCenter
+        //x: 263
+        //y: 318
+        width: Math.round(mainwind.width * 0.1083) //208
+        height: Math.round(mainwind.width * 0.064) //122
+        anchors.horizontalCenter: newSpeed.horizontalCenter
+        anchors.bottom: newSpeedNeedle.top
         Text {
             id: speedLabel
             x: 60
             y: 98
-            width: 48
-            height: 24
+            width: Math.round(mainwind.width * 0.025) //48
+            height: Math.round(mainwind.width * 0.0125)//24
             //color: Themes.currentTheme == 'darkMode' ? "white" : "#000000"
             color: "white"
-            text: "km/h"
-            font.pixelSize: 20
+            text: "km/h" + newSpeedNeedle.height + " " +newSpeedNeedle.y
+            font.pixelSize: Math.round(mainwind.width * 0.010)//20
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignTop
             wrapMode: Text.Wrap
@@ -119,13 +105,13 @@ Item {
 
         Text {
             id: speedValue
-            x: 0
-            y: 0
-            width: 188
-            height: 115
+            //x: 0
+            //y: 0
+            width: Math.round(mainwind.width * 0.098) //188
+            height: Math.round(mainwind.width * 0.06) //115
             color: "#75bbf0" //"white"
             text: Math.round(speedGauge.speed)
-            font.pixelSize: 96
+            font.pixelSize: Math.round(mainwind.width * 0.05) //96
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignTop
             wrapMode: Text.Wrap

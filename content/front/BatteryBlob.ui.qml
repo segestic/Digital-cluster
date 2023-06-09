@@ -7,8 +7,8 @@ import "../../imports"
 
 Item {
     id: batteryBlob
-    width: 720
-    height: 720
+    width: Math.round(mainwind.height)//720
+    height: Math.round(mainwind.height)//720
     property int batteryState: 1
 
     state: "balanced"
@@ -18,8 +18,8 @@ Item {
         id: rectangle
         x: 0
         y: 0
-        width: 720
-        height: 720
+        width: Math.round(mainwind.height)//720
+        height: Math.round(mainwind.height)//720
         visible: false
         color: "#595959"
     }
@@ -34,8 +34,8 @@ Item {
 
     Item {
         id: itemGradient
-        width: 500
-        height: 500
+        width: Math.round(mainwind.width * 0.26)//500
+        height: Math.round(mainwind.width * 0.26)//500
         visible: false
 
         Rectangle {
@@ -66,8 +66,8 @@ Item {
     Item {
         x: 0
         y: 0
-        width: 720
-        height: 720
+        width:Math.round(mainwind.height)
+        height: Math.round(mainwind.height)//720
         layer.effect: InnerShadowEffect {
             id: innerShadow
             opacity: 0.036

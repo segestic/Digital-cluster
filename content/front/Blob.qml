@@ -28,8 +28,8 @@ Item {
 
 
 
-    width: Constants.width * 0.26//500
-    height: Constants.width * 0.26 //500
+    width: Math.round(mainwind.width * 0.26)//500
+    height:Math.round(mainwind.width * 0.26)//500
     property real speed: -1
 
     Item {
@@ -45,8 +45,8 @@ Item {
         id: circles
         x: 0
         y: 0
-        width: Constants.height//720
-        height: Constants.height//720
+        width: Math.round(mainwind.height)//720
+        height: Math.round(mainwind.height)//720
         visible: false
         rotation: 0
 

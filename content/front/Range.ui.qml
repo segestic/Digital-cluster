@@ -9,8 +9,8 @@ Item {
         id: rangeValue
         x: 0
         y: 0
-        width: 241
-        height: 38
+        width: Math.round(mainwind.width * 0.126) //241
+        height:Math.round(mainwind.width * 0.02) //38
         color: "white"
         text: range.currentRange + " km"
         font.pixelSize: 32
@@ -25,8 +25,8 @@ Item {
         id: rangeLabel
         x: 0
         y: 38
-        width: 241
-        height: 22
+        width: Math.round(mainwind.width * 0.126)//241
+        height: Math.round(mainwind.width * 0.012)//22
         color: "#d3d3d3"
         text: "RANGE"
         font.pixelSize: 18

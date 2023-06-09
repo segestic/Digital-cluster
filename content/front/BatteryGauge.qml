@@ -1,5 +1,4 @@
 import QtQuick 2.8
-//import QtQuick.Studio.Components 1.0
 import QtQuick.Controls 2.15
 import QtQuick.Timeline 1.0
 import "../../imports"
@@ -13,14 +12,6 @@ Item {
     property alias batteryState: batteryBlob.batteryState
     property alias batteryLevel: batteryBlob.batteryLevel
 
-//    Keys.onDigit0Pressed: { decreaseCharge() }
-//    Keys.onDigit1Pressed: { increaseCharge() }
-    //property alias increase:  increaseSpeed()
-
-
-//    Component.onCompleted: {
-//        forceActiveFocus()
-//    }
 
 
     function decreaseCharge() {

@@ -3,8 +3,8 @@ import "../../imports"
 
 Item {
     id: speedBlob
-    width: 500
-    height: 500
+    width: Math.round(mainwind.width * 0.26)//500
+    height: Math.round(mainwind.width * 0.26)//500
     state: "State1"
     property real speed: 50
 
@@ -18,8 +18,8 @@ Item {
 
     Item {
         id: itemGradient
-        width: 500
-        height: 500
+        width: Math.round(mainwind.width * 0.26)// 500
+        height: Math.round(mainwind.width * 0.26) //500
         visible: false
 
         Rectangle {
