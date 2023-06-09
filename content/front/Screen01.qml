@@ -58,7 +58,6 @@ Item {
         anchors.bottomMargin: 0
         anchors.leftMargin: 0
         anchors.topMargin: 0
-        //fillMode: Image.PreserveAspectFit
         anchors {
             fill: parent
             centerIn: parent
@@ -101,7 +100,7 @@ Item {
         }
         Gear {
             id: gear
-            y: 330
+            //y: 330
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.left
             anchors.leftMargin: 32
@@ -120,7 +119,7 @@ Item {
 
         BottomBar {
             id: bottomBar
-            y: 624
+            //y: 624
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.bottom: parent.bottom

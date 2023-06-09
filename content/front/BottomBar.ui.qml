@@ -11,8 +11,9 @@ Item {
 
     Item {
         id: media
-        x: 1446
-        y: 12
+//        x: 1446
+//        y: 12
+
         width: Math.round(mainwind.width * 0.23)//450
         height: Math.round(mainwind.height * 0.1)//72
         anchors.verticalCenter: parent.verticalCenter

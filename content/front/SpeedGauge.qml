@@ -83,11 +83,35 @@ Item {
         width: Math.round(mainwind.width * 0.1083) //208
         height: Math.round(mainwind.width * 0.064) //122
         anchors.horizontalCenter: newSpeed.horizontalCenter
-        anchors.bottom: newSpeedNeedle.top
+        anchors.top: newSpeed.verticalCenter
+        anchors.topMargin:  -Math.round(width * 0.1)
+
+        Text {
+            id: speedValue
+            //x: 0
+            //y: 0
+            width: Math.round(mainwind.width * 0.098) //188
+            height: Math.round(mainwind.width * 0.06) //115
+            color: "#75bbf0" //"white"
+            text: Math.round(speedGauge.speed)
+            font.pixelSize: Math.round(mainwind.width * 0.04) //96
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignTop
+            wrapMode: Text.Wrap
+            anchors.horizontalCenterOffset: 15
+            font.styleName: "Regular"
+            anchors.horizontalCenter: parent.horizontalCenter
+            font.weight: Font.Medium
+            font.family: Constants.font.family
+        }
+
         Text {
             id: speedLabel
-            x: 60
-            y: 98
+            //x: 60
+            //y: 98
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: speedValue.bottom
+            anchors.topMargin: 0
             width: Math.round(mainwind.width * 0.025) //48
             height: Math.round(mainwind.width * 0.0125)//24
             //color: Themes.currentTheme == 'darkMode' ? "white" : "#000000"
@@ -99,26 +123,6 @@ Item {
             wrapMode: Text.Wrap
             anchors.horizontalCenterOffset: 21
             font.styleName: "Regular"
-            font.family: Constants.font.family
-            anchors.horizontalCenter: parent.horizontalCenter
-        }
-
-        Text {
-            id: speedValue
-            //x: 0
-            //y: 0
-            width: Math.round(mainwind.width * 0.098) //188
-            height: Math.round(mainwind.width * 0.06) //115
-            color: "#75bbf0" //"white"
-            text: Math.round(speedGauge.speed)
-            font.pixelSize: Math.round(mainwind.width * 0.05) //96
-            horizontalAlignment: Text.AlignHCenter
-            verticalAlignment: Text.AlignTop
-            wrapMode: Text.Wrap
-            anchors.horizontalCenterOffset: 15
-            font.styleName: "Regular"
-            anchors.horizontalCenter: parent.horizontalCenter
-            font.weight: Font.Medium
             font.family: Constants.font.family
         }
     }
