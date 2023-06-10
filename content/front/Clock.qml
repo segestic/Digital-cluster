@@ -9,8 +9,6 @@ Item {
 
     Text {
         id: timeValue
-        x: 0
-        y: 0
         width: 62
         height: 29
         color: "white"
@@ -20,13 +18,15 @@ Item {
         verticalAlignment: Text.AlignTop
         wrapMode: Text.Wrap
         font.weight: Font.Normal
-        font.family: Constants.font.family
+        //font.family: Constants.font.family
     }
 
     Text {
         id: timeLabel
-        x: 0
-        y: 29
+        anchors.top: timeValue.bottom
+
+//        x: 0
+//        y: 29
         width: 34
         height: 17
         color: "#d3d3d3"
@@ -36,7 +36,7 @@ Item {
         verticalAlignment: Text.AlignTop
         wrapMode: Text.Wrap
         font.weight: Font.Medium
-        font.family: Constants.font.family
+        //font.family: Constants.font.family
     }
 
     //debug....ClockController

@@ -14,8 +14,8 @@ Item {
       return num;
     }
 
-    width: Constants.width
-    height: Constants.height// mainLoader.height
+    width: mainwind.width
+    height: mainwind.height// mainLoader.height
     Keys.onRightPressed: speedguageLeft.increaseSpeed()
     Keys.onLeftPressed: speedguageLeft.decreaseSpeed()
     Keys.onDownPressed: { battguage.decreaseCharge() } //onDigit0Pressed
@@ -103,7 +103,7 @@ Item {
             //y: 330
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.left
-            anchors.leftMargin: 32
+            anchors.leftMargin: Math.round(mainwind.width * 0.0167)//32
             currentGear: 1
         }
         Range {
@@ -122,8 +122,9 @@ Item {
             //y: 624
             anchors.left: parent.left
             anchors.right: parent.right
+            anchors.top: speedguageLeft.bottom
+            anchors.topMargin: -Math.round(mainwind.width * 0.052) //100
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: 0
             anchors.leftMargin: 0
             anchors.rightMargin: 0
             currentTemp: 15

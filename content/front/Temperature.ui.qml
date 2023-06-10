@@ -9,8 +9,8 @@ Item {
     property int currentTemp: 27
     Text {
         id: temperatureValue
-        x: 0
-        y: 0
+//        x: 0
+//        y: 0
         width: 72
         height: 29
         color: "white"
@@ -20,13 +20,14 @@ Item {
         verticalAlignment: Text.AlignTop
         wrapMode: Text.Wrap
         font.weight: Font.Normal
-        font.family: Constants.font.family
+        //font.family: Constants.font.family
     }
 
     Text {
         id: temperatureLabel
-        x: 0
-        y: 29
+//        x: 0
+//        y: 29
+        anchors.top: temperatureValue.bottom
         width: 61
         height: 17
         color: "#d3d3d3"
@@ -36,6 +37,6 @@ Item {
         verticalAlignment: Text.AlignTop
         wrapMode: Text.Wrap
         font.weight: Font.Medium
-        font.family: Constants.font.family
+        //font.family: Constants.font.family
     }
 }

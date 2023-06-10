@@ -12,7 +12,13 @@ Item {
     property alias batteryState: batteryBlob.batteryState
     property alias batteryLevel: batteryBlob.batteryLevel
 
+    //debug
+    QtObject{
+        id:mainwind
+        property real width: 1350
+        property real height: 506
 
+    }
 
     function decreaseCharge() {
         if (batteryBlob.batteryLevel >= 1) {
@@ -47,12 +53,12 @@ Item {
         anchors.verticalCenterOffset: 19
         Text {
             id: powerLabel
-            x: 3
-            y: 98
+//            x: 3
+//            y: 98
             height: parseInt(Math.round(mainwind.width * 0.0125)) //24
-            color: "white" //Themes.currentTheme == 'darkMode' ? "white" : "#000000"
+            color: "yellow" //Themes.currentTheme == 'darkMode' ? "white" : "#000000"
             text: "% BATTERY" + String(batteryGaugeNew.width) + "  " + String(batteryGaugeNew.height)
-            font.pixelSize: parseInt(Math.round(mainwind.height * 0.0278)) //20
+            font.pixelSize: Math.round(mainwind.width * 0.010)//20
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignTop
             wrapMode: Text.Wrap
@@ -63,16 +69,16 @@ Item {
 
         Text {
             id: powerValue
-            x: -35
-            y: 0
             width: parseInt(Math.round(mainwind.width * 0.0974)) //187
             height: parseInt(Math.round(mainwind.height * 0.16)) //115
-            color: "white" //Themes.currentTheme == 'darkMode' ? "white" : "#000000"
+            color: "yellow" //Themes.currentTheme == 'darkMode' ? "white" : "#000000"
             text: batteryLevelStringMapper.text
-            font.pixelSize: 96
+            font.pixelSize:  Math.round(mainwind.width * 0.050)
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignTop
             wrapMode: Text.Wrap
+            anchors.top: powerLabel.bottom
+            anchors.topMargin: Math.round(mainwind.width * 0.010)
             anchors.horizontalCenter: parent.horizontalCenter
             fontSizeMode: Text.FixedSize
             font.weight: Font.Normal
@@ -114,8 +120,8 @@ Item {
         id: batteryEffect
         x: 56
         y: 91
-        width: parseInt(Math.round(mainwind.width * 0.283)) //544
-        height: parseInt(Math.round(mainwind.width * 0.283)) //544
+        width: Math.round(mainwind.width * 0.283) //544
+        height: Math.round(mainwind.width * 0.283) //544
 
         angleDegree: batteryGauge.batteryLevel.toFixed()
         opacity: 0.3 + (batteryGauge.batteryLevel.toFixed() + 133) / 270.0

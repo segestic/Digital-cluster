@@ -3,7 +3,7 @@ import QtQuick 2.15
 Rectangle {
     id: ttbar
     width: 1920 //Math.round(mainwind.width)
-    height: 64 //Math.round(mainwind.width * 0.033 )
+    height: Math.round(mainwind.width * 0.033)//64 //Math.round(mainwind.width * 0.033 )
     color: "#000000"
 
     function toggleVisibilityLeft() {
@@ -35,8 +35,8 @@ Rectangle {
 
         Item {
             id: beam
-            width: 64
-            height: 64
+            width: Math.round(mainwind.width * 0.033)//64
+            height: Math.round(mainwind.width * 0.033)//64
             Image {
                 id: lowbeam
                 opacity: Car3dControl.frontLightsOn ? 1.0 : 0.2
@@ -46,15 +46,15 @@ Rectangle {
                     id: colorOverlay
                     color: "#1fff5d"
                 }
-                sourceSize.height: 64
-                sourceSize.width: 64
+                sourceSize.height: Math.round(mainwind.width * 0.033)//64
+                sourceSize.width: Math.round(mainwind.width * 0.033)//64
             }
         }
 
         Item {
             id: beam2
-            width: 64
-            height: 64
+            width: Math.round(mainwind.width * 0.033)//64
+            height: Math.round(mainwind.width * 0.033)//64
             Image {
                 id: highbeam
                 opacity: Car3dControl.highBeamOn ? 1.0 : 0.2
@@ -64,8 +64,8 @@ Rectangle {
                     id: colorOverlay2
                     color: "#1fff5d"
                 }
-                sourceSize.height: 64
-                sourceSize.width: 64
+                sourceSize.height: Math.round(mainwind.width * 0.033)//64
+                sourceSize.width: Math.round(mainwind.width * 0.033)//64
             }
         }
     }
@@ -77,7 +77,7 @@ Rectangle {
         //y: 0
         anchors.left: row.right
         anchors.leftMargin: 5
-        width: 64
+        width: Math.round(mainwind.width * 0.033)//64
         source: "qrc:/content/assets/LaneCenteringAssist.png"
         fillMode: Image.PreserveAspectFit
     }
@@ -87,8 +87,8 @@ Rectangle {
     //right indicators
     Image {
         id: speedLimiter
-        width: 64
-        height: 64
+        width: Math.round(mainwind.width * 0.033)//64
+        height: Math.round(mainwind.width * 0.033)//64
         source: "qrc:/content/assets/SpeedLimiter.png"
         anchors.right: seatBelt.left
         anchors.rightMargin: 15
@@ -128,6 +128,6 @@ Rectangle {
         anchors.topMargin: 10
         color: "#f3f3f3"
         text: qsTr("Digital Instrument Cluster")
-        font.pixelSize: 30
+        font.pixelSize: Math.round(mainwind.width * 0.019)//30
     }
 }

@@ -3,8 +3,8 @@ import QtQuick.Window 2.15
 
 Window {
     id: mainwind
-    width: 1920
-    height: 720
+    width: 1350//1920//
+    height: Math.round(width*0.375)//720
     visible: true
     title: qsTr("Hello World")
 

@@ -99,7 +99,6 @@ Item {
 
     Row {
         id: row
-        y: 0
         width: 572
         height: 46
         anchors.verticalCenter: parent.verticalCenter

@@ -11,8 +11,8 @@ Item {
 
     Rectangle {
         id: rectangle
-        x: 0
-        y: 0
+//        x: 0
+//        y: 0
         width: 48
         height: 40
         color: "#00000000"
