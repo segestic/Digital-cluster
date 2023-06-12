@@ -2,7 +2,7 @@ import QtQuick 2.15
 
 Rectangle {
     id: ttbar
-    width: 1920 //Math.round(mainwind.width)
+    width: Math.round(mainwind.width)
     height: Math.round(mainwind.width * 0.033)//64 //Math.round(mainwind.width * 0.033 )
     color: "#000000"
 
@@ -15,9 +15,13 @@ Rectangle {
     }
     Image {
         id: turnLeft
-        x: 8
-        y: 11
+//        x: 8
+//        y: 11
+        anchors.left: parent.left
+        anchors.leftMargin: Math.round(mainwind.width * 0.004)
         source: "qrc:/content/assets/TurnLeft.png"
+        width: Math.round(mainwind.width * 0.033)//64
+        height: Math.round(mainwind.width * 0.033)//64
         fillMode: Image.PreserveAspectFit
     }
 
@@ -31,7 +35,7 @@ Rectangle {
         anchors.topMargin: 0
         //anchors.rightMargin: 1681
 
-        spacing: 5
+        spacing: Math.round(mainwind.width * 0.002)
 
         Item {
             id: beam
@@ -78,6 +82,7 @@ Rectangle {
         anchors.left: row.right
         anchors.leftMargin: 5
         width: Math.round(mainwind.width * 0.033)//64
+        height: Math.round(mainwind.width * 0.033)//64
         source: "qrc:/content/assets/LaneCenteringAssist.png"
         fillMode: Image.PreserveAspectFit
     }
@@ -91,7 +96,7 @@ Rectangle {
         height: Math.round(mainwind.width * 0.033)//64
         source: "qrc:/content/assets/SpeedLimiter.png"
         anchors.right: seatBelt.left
-        anchors.rightMargin: 15
+        anchors.rightMargin: 5
         anchors.verticalCenter: parent.verticalCenter
         fillMode: Image.PreserveAspectFit
     }
@@ -99,18 +104,22 @@ Rectangle {
     Image {
         id: seatBelt
         anchors.right: laneKeepingAssistance.left
-        anchors.rightMargin: 15
+        anchors.rightMargin: 5
         anchors.verticalCenter: parent.verticalCenter
         source: "qrc:/content/assets/SeatBelt.png"
         fillMode: Image.PreserveAspectFit
+        width: Math.round(mainwind.width * 0.033)//64
+        height: Math.round(mainwind.width * 0.033)//64
     }
     Image {
         id: laneKeepingAssistance
         anchors.right: turnRight.left
-        anchors.rightMargin: 15
+        anchors.rightMargin: 5
         anchors.verticalCenter: parent.verticalCenter
         source: "qrc:/content/assets/LaneKeepingAssistance.png"
         fillMode: Image.PreserveAspectFit
+        width: Math.round(mainwind.width * 0.033)//64
+        height: Math.round(mainwind.width * 0.033)//64
     }
 
     Image {
@@ -119,6 +128,8 @@ Rectangle {
         anchors.verticalCenter: parent.verticalCenter
         source: "qrc:/content/assets/TurnRight.png"
         fillMode: Image.PreserveAspectFit
+        width: Math.round(mainwind.width * 0.033)//64
+        height: Math.round(mainwind.width * 0.033)//64
     }
 
     Text {
@@ -126,6 +137,9 @@ Rectangle {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: parent.top
         anchors.topMargin: 10
+        horizontalAlignment: Text.AlignHCenter
+        width: Math.round(mainwind.width * 0.033)//64
+        height: Math.round(mainwind.width * 0.033)//64
         color: "#f3f3f3"
         text: qsTr("Digital Instrument Cluster")
         font.pixelSize: Math.round(mainwind.width * 0.019)//30

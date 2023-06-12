@@ -13,12 +13,11 @@ Item {
     property alias batteryLevel: batteryBlob.batteryLevel
 
     //debug
-    QtObject{
-        id:mainwind
-        property real width: 1350
-        property real height: 506
-
-    }
+//    QtObject{
+//        id:mainwind
+//        property real width: 1350
+//        property real height: 506
+//    }
 
     function decreaseCharge() {
         if (batteryBlob.batteryLevel >= 1) {
@@ -43,8 +42,8 @@ Item {
 
     Item {
         id: power
-        x: 291
-        y: 318
+//        x: 291
+//        y: 318
         width: parseInt(Math.round(mainwind.width * 0.126)) //241
         height: parseInt(Math.round(mainwind.height * 0.1694)) //122
         anchors.verticalCenter: parent.verticalCenter
@@ -53,11 +52,9 @@ Item {
         anchors.verticalCenterOffset: 19
         Text {
             id: powerLabel
-//            x: 3
-//            y: 98
             height: parseInt(Math.round(mainwind.width * 0.0125)) //24
             color: "yellow" //Themes.currentTheme == 'darkMode' ? "white" : "#000000"
-            text: "% BATTERY" + String(batteryGaugeNew.width) + "  " + String(batteryGaugeNew.height)
+            text: "% BATTERY" //+ String(batteryGaugeNew.width) + "  " + String(batteryGaugeNew.height)
             font.pixelSize: Math.round(mainwind.width * 0.010)//20
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignTop
@@ -78,7 +75,7 @@ Item {
             verticalAlignment: Text.AlignTop
             wrapMode: Text.Wrap
             anchors.top: powerLabel.bottom
-            anchors.topMargin: Math.round(mainwind.width * 0.010)
+            //anchors.topMargin: Math.round(mainwind.width * 0.010)
             anchors.horizontalCenter: parent.horizontalCenter
             fontSizeMode: Text.FixedSize
             font.weight: Font.Normal
@@ -94,22 +91,20 @@ Item {
 
     Item {
         id: batteryShadow
-        x: 164
-        y: 604
-        width: parseInt(Math.round(mainwind.width * 0.1854)) //356
-        height: parseInt(Math.round(mainwind.height * 0.044)) //32
+        anchors.bottom: batteryGaugeNew.bottom
+        anchors.bottomMargin: -Math.round(mainwind.height * 0.04)
+        width: Math.round(mainwind.width * 0.1854) //356
+        height: Math.round(mainwind.height * 0.044) //32
         Image {
             id: batteryShadow1
-            x: 0
-            y: 0
             source: "qrc:/content/assets/blob-shadow.png"
         }
     }
 
     Image {
         id: batteryGaugeNew
-        x: 56
-        y: 88
+        //anchors.horizontalCenter: parent.horizontalCenter
+        anchors.centerIn: parent
         source: "qrc:/content/assets/SpeedGaugeAssetEmpty.png"
         fillMode: Image.PreserveAspectFit
         width: Math.round(mainwind.width * 0.286)//549
@@ -118,8 +113,7 @@ Item {
 
     ChargeGaugeEffect {
         id: batteryEffect
-        x: 56
-        y: 91
+        anchors.centerIn: parent
         width: Math.round(mainwind.width * 0.283) //544
         height: Math.round(mainwind.width * 0.283) //544
 

@@ -77,7 +77,7 @@ Item {
         SpeedGauge {
             id:speedguageLeft
             anchors {
-
+                top: tellTales.top
             }
         }
 
@@ -100,7 +100,6 @@ Item {
         }
         Gear {
             id: gear
-            //y: 330
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.left
             anchors.leftMargin: Math.round(mainwind.width * 0.0167)//32
@@ -108,18 +107,16 @@ Item {
         }
         Range {
             id: range
-            x: 1647
-            y: 100
+            anchors.top: tellTales.bottom
             anchors.verticalCenter: parent.verticalCenter
             anchors.right: parent.right
-            anchors.verticalCenterOffset: -202
-            anchors.rightMargin: 32
+            //anchors.verticalCenterOffset: -202
+            anchors.rightMargin: Math.round(mainwind.width * 0.02)
             currentRange: 351
         }
 
         BottomBar {
             id: bottomBar
-            //y: 624
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.top: speedguageLeft.bottom

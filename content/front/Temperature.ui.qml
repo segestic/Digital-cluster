@@ -25,8 +25,6 @@ Item {
 
     Text {
         id: temperatureLabel
-//        x: 0
-//        y: 29
         anchors.top: temperatureValue.bottom
         width: 61
         height: 17

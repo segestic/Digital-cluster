@@ -24,12 +24,12 @@ Item {
     }
 
     //debug
-    QtObject{
-        id:mainwind
-        property real width: 1350
-        property real height: 506
+//    QtObject{
+//        id:mainwind
+//        property real width: 1350
+//        property real height: 506
 
-    }
+//    }
 
     Image {
         id: speedBlobShadow1
@@ -58,9 +58,6 @@ Item {
             anchors.horizontalCenter: newSpeed.horizontalCenter
             anchors.top: newSpeed.top//parent.top
             anchors.topMargin: -70//-1 * Math.round(mainwind.width * 0.417)//-80
-            //anchors.verticalCenter: newSpeed.verticalCenter
-            //x: 301
-            //y: 20
             value: speedGauge.speed
             tranformOriginX: newSpeedNeedle.width / 2  + 4
             tranformOriginY: newSpeedNeedle.height + 57
@@ -78,8 +75,8 @@ Item {
 
     SpeedBlob {
         id: speedBlob
-        x: 30
-        y: 19
+//        x: 30
+//        y: 19
         width: Math.round(mainwind.width * 0.351) //674
         height: Math.round(mainwind.width * 0.375) //720
         opacity: 1
@@ -89,8 +86,6 @@ Item {
 
     Item {
         id: speed
-        //x: 263
-        //y: 318
         width: Math.round(mainwind.width * 0.1083) //208
         height: Math.round(mainwind.width * 0.064) //122
         anchors.horizontalCenter: newSpeed.horizontalCenter
