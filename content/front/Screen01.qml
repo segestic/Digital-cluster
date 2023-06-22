@@ -16,15 +16,14 @@ Item {
 
     width: mainwind.width
     height: mainwind.height// mainLoader.height
-    Keys.onRightPressed: {speedguageLeft.increaseSpeed(2); (speedguageLeft.speed <= 200) ? bottomBar.odometerDistance += 4 : bottomBar.odometerDistance += 0}
+    Keys.onRightPressed: {speedguageLeft.increaseSpeed(1); (speedguageLeft.speed <= 200) ? bottomBar.odometerDistance += 4 : bottomBar.odometerDistance += 0}
     Keys.onReleased: {
         if (event.key == Qt.Key_Right) {
-            //speedguageLeft.decreaseSpeed();
-            {while (speedguageLeft.speed > 0) speedguageLeft.decreaseSpeed(); bottomBar.odometerDistance += 1;}
+            idleSpeed.start();
             event.accepted = true;
         }
     }
-    Keys.onLeftPressed: {speedguageLeft.decreaseSpeed(); (speedguageLeft.speed === 0) ? range.currentRange += 0 : range.currentRange += 1 }
+    Keys.onLeftPressed: {speedguageLeft.decreaseSpeed(); (speedguageLeft.speed === 0) ? bottomBar.odometerDistance += 0 : bottomBar.odometerDistance += 1 }
     Keys.onDownPressed: { battguage.decreaseCharge() } //onDigit0Pressed
     Keys.onUpPressed: { battguage.increaseCharge() }
     //Keys.onDigit0Pressed: {if (gear.currentDriveMode === 0) {gear.currentDriveMode = 1} else {gear.currentDriveMode = 0}  }
@@ -129,7 +128,7 @@ Item {
             anchors.right: parent.right
             //anchors.verticalCenterOffset: -202
             anchors.rightMargin: Math.round(mainwind.width * 0.02)
-            currentRange: (350 * (battguage.batteryLevel/100 ) )
+            currentRange: (300 * (battguage.batteryLevel/100 ) )
         }
 
         BottomBar {
@@ -153,6 +152,20 @@ Item {
             anchors.rightMargin: 0
             anchors.leftMargin: 0
         }
-    }
+
+        Timer {
+            id: idleSpeed
+            interval: 1000 // 1 second
+            running: true
+            repeat: true
+            onTriggered: {
+                if (speedguageLeft.speed >= 1) {
+                    speedguageLeft.decreaseSpeed();
+                    bottomBar.odometerDistance += 1;
+                    //console.log("Value is decerasing!")
+                }
+            }
+        }
+   }
 }
 
