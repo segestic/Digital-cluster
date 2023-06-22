@@ -7,22 +7,27 @@ Rectangle {
     color: "#000000"
 
     function toggleVisibilityLeft() {
-        turnLeft.visible = !turnLeft.visible;
+        //turnLeft.visible = !turnLeft.visible;
+        turnLeft.opacity = (turnLeft.opacity === 0.2) ? 1.0 : 0.2;
     }
 
     function toggleVisibilityRight() {
-        turnRight.visible = !turnRight.visible;
+//        if (turnRight.opacity === "0.2") {
+//          turnRight.opacity = "1.0";
+//        } else {
+//          turnRight.opacity = "0.2";
+//        }
+        turnRight.opacity = (turnRight.opacity === 0.2) ? 1.0 : 0.2;
     }
     Image {
         id: turnLeft
-//        x: 8
-//        y: 11
         anchors.left: parent.left
         anchors.leftMargin: Math.round(mainwind.width * 0.004)
         source: "qrc:/content/assets/TurnLeft.png"
         width: Math.round(mainwind.width * 0.033)//64
         height: Math.round(mainwind.width * 0.033)//64
         fillMode: Image.PreserveAspectFit
+        opacity: 0.2
     }
 
     Row {
@@ -43,7 +48,7 @@ Rectangle {
             height: Math.round(mainwind.width * 0.033)//64
             Image {
                 id: lowbeam
-                opacity: Car3dControl.frontLightsOn ? 1.0 : 0.2
+                opacity: 0.2
                 source: "qrc:/content/assets/controlpanel/icon-low-beam.svg"
                 layer.enabled: true
                 layer.effect: ColorOverlayEffect {
@@ -61,7 +66,7 @@ Rectangle {
             height: Math.round(mainwind.width * 0.033)//64
             Image {
                 id: highbeam
-                opacity: Car3dControl.highBeamOn ? 1.0 : 0.2
+                opacity: 0.2
                 source: "qrc:/content/assets/controlpanel/icon-high-beam.svg"
                 layer.enabled: true
                 layer.effect: ColorOverlayEffect {
@@ -77,14 +82,13 @@ Rectangle {
 
     Image {
         id: laneCenteringAssist
-        //x: 201
-        //y: 0
         anchors.left: row.right
         anchors.leftMargin: 5
         width: Math.round(mainwind.width * 0.033)//64
         height: Math.round(mainwind.width * 0.033)//64
         source: "qrc:/content/assets/LaneCenteringAssist.png"
         fillMode: Image.PreserveAspectFit
+        opacity: 0.2
     }
 
 
@@ -99,6 +103,7 @@ Rectangle {
         anchors.rightMargin: 5
         anchors.verticalCenter: parent.verticalCenter
         fillMode: Image.PreserveAspectFit
+        opacity: 0.2
     }
 
     Image {
@@ -110,6 +115,7 @@ Rectangle {
         fillMode: Image.PreserveAspectFit
         width: Math.round(mainwind.width * 0.033)//64
         height: Math.round(mainwind.width * 0.033)//64
+        opacity: 0.2
     }
     Image {
         id: laneKeepingAssistance
@@ -120,6 +126,7 @@ Rectangle {
         fillMode: Image.PreserveAspectFit
         width: Math.round(mainwind.width * 0.033)//64
         height: Math.round(mainwind.width * 0.033)//64
+        opacity: 0.2
     }
 
     Image {
@@ -130,6 +137,7 @@ Rectangle {
         fillMode: Image.PreserveAspectFit
         width: Math.round(mainwind.width * 0.033)//64
         height: Math.round(mainwind.width * 0.033)//64
+        opacity: 0.2
     }
 
     Text {

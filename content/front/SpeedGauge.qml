@@ -9,9 +9,9 @@ Item {
     height: Math.round(mainwind.width * 0.375)//720
     property real speed: 0
 
-    function increaseSpeed() {
+    function increaseSpeed(value1) {
         if (newSpeedNeedle.value <= 199) {
-            speedGauge.speed += 1
+            speedGauge.speed += value1
             newSpeedNeedle.value = speedGauge.speed
         }
     }

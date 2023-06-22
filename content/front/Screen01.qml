@@ -16,13 +16,20 @@ Item {
 
     width: mainwind.width
     height: mainwind.height// mainLoader.height
-    Keys.onRightPressed: speedguageLeft.increaseSpeed()
-    Keys.onLeftPressed: speedguageLeft.decreaseSpeed()
+    Keys.onRightPressed: {speedguageLeft.increaseSpeed(2); (speedguageLeft.speed <= 200) ? bottomBar.odometerDistance += 4 : bottomBar.odometerDistance += 0}
+    Keys.onReleased: {
+        if (event.key == Qt.Key_Right) {
+            //speedguageLeft.decreaseSpeed();
+            {while (speedguageLeft.speed > 0) speedguageLeft.decreaseSpeed(); bottomBar.odometerDistance += 1;}
+            event.accepted = true;
+        }
+    }
+    Keys.onLeftPressed: {speedguageLeft.decreaseSpeed(); (speedguageLeft.speed === 0) ? range.currentRange += 0 : range.currentRange += 1 }
     Keys.onDownPressed: { battguage.decreaseCharge() } //onDigit0Pressed
     Keys.onUpPressed: { battguage.increaseCharge() }
     //Keys.onDigit0Pressed: {if (gear.currentDriveMode === 0) {gear.currentDriveMode = 1} else {gear.currentDriveMode = 0}  }
     Keys.onDigit0Pressed: {gear.currentDriveMode = (gear.currentDriveMode === 0) ? 1 : 0;}
-    Keys.onPressed: { if (event.key === Qt.Key_R) {
+    Keys.onPressed: { if (event.key === Qt.Key_N) {
                             range.currentRange +=1 ;
                         }
                         else if (event.key === Qt.Key_M) {
@@ -38,13 +45,13 @@ Item {
                         else if (event.key === Qt.Key_L) {
                             tellTales.toggleVisibilityLeft()
                         }
-                        else if (event.key === Qt.Key_P) {
+                        else if (event.key === Qt.Key_R) {
                             tellTales.toggleVisibilityRight()
                         }
 
                     }
 
-
+    Keys.onTabPressed: {middleInfo.visible = (middleInfo.visible === false) ? true : false}
     Component.onCompleted: {
         forceActiveFocus()
     }
@@ -91,6 +98,16 @@ Item {
             z:4
         }
 
+        MiddleInfo{
+            id: middleInfo
+            anchors{
+                horizontalCenter: parent.horizontalCenter
+                bottom: parent.bottom
+            }
+            visible: false
+            z:5
+        }
+
         BatteryGauge {
             id: battguage
             anchors {
@@ -112,7 +129,7 @@ Item {
             anchors.right: parent.right
             //anchors.verticalCenterOffset: -202
             anchors.rightMargin: Math.round(mainwind.width * 0.02)
-            currentRange: 351
+            currentRange: (350 * (battguage.batteryLevel/100 ) )
         }
 
         BottomBar {
