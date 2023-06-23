@@ -31,13 +31,13 @@ Item {
     Keys.onPressed: { if (event.key === Qt.Key_N) {
                             range.currentRange +=1 ;
                         }
-                        else if (event.key === Qt.Key_M) {
+                        else if (event.key === Qt.Key_G) {
                              gear.currentGear = incrementNumber(gear.currentGear) ;
                         }
                         else if (event.key === Qt.Key_D) {
                             bottomBar.odometerDistance += 1;
                         }
-                        else if (event.key === Qt.Key_T) {
+                        else if (event.key === Qt.Key_Y) {
                             bottomBar.currentTemp += 1
                             //console.log("Key M pressed");
                         }
@@ -47,8 +47,25 @@ Item {
                         else if (event.key === Qt.Key_R) {
                             tellTales.toggleVisibilityRight()
                         }
-
-                    }
+                        else if (event.key === Qt.Key_J) {
+                            tellTales.toggleLowBeam()
+                        }
+                        else if (event.key === Qt.Key_H) {
+                            tellTales.toggleHighBeam()
+                        }
+                        else if (event.key === Qt.Key_S) {
+                            tellTales.toggleSeatBelt()
+                        }
+                        else if (event.key === Qt.Key_M) {
+                            tellTales.toggleLaneCenteringAssist()
+                        }
+                        else if (event.key === Qt.Key_K) {
+                            tellTales.togglelaneKeepingAssistance()
+                        }
+                        else if (event.key === Qt.Key_T) {
+                            tellTales.toggleSpeedLimiter()
+                        }
+                }
 
     Keys.onTabPressed: {middleInfo.visible = (middleInfo.visible === false) ? true : false}
     Component.onCompleted: {

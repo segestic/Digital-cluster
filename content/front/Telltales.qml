@@ -19,6 +19,27 @@ Rectangle {
 //        }
         turnRight.opacity = (turnRight.opacity === 0.2) ? 1.0 : 0.2;
     }
+    function toggleLowBeam() {
+        //turnLeft.visible = !turnLeft.visible;
+        lowbeam.opacity = (lowbeam.opacity === 0.2) ? 1.0 : 0.2;
+    }
+    function toggleHighBeam() {
+        //turnLeft.visible = !turnLeft.visible;
+        highbeam.opacity = (highbeam.opacity === 0.2) ? 1.0 : 0.2;
+    }
+    function toggleLaneCenteringAssist() {
+        laneCenteringAssist.opacity = (laneCenteringAssist.opacity === 0.2) ? 1.0 : 0.2;
+    }
+    function toggleSpeedLimiter() {
+        speedLimiter.opacity = (speedLimiter.opacity === 0.2) ? 1.0 : 0.2;
+    }
+    function toggleSeatBelt() {
+        seatBelt.opacity = (seatBelt.opacity === 0.2) ? 1.0 : 0.2;
+    }
+    function togglelaneKeepingAssistance() {
+        laneKeepingAssistance.opacity = (laneKeepingAssistance.opacity === 0.2) ? 1.0 : 0.2;
+    }
+
     Image {
         id: turnLeft
         anchors.left: parent.left

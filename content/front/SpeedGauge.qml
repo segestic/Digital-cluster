@@ -12,6 +12,7 @@ Item {
     function increaseSpeed(value1) {
         if (newSpeedNeedle.value <= 199) {
             speedGauge.speed += value1
+            //speedGauge.speed += 1;
             newSpeedNeedle.value = speedGauge.speed
         }
     }
@@ -123,7 +124,7 @@ Item {
             height: Math.round(mainwind.width * 0.0125)//24
             //color: Themes.currentTheme == 'darkMode' ? "white" : "#000000"
             color: "white"
-            text: "km/h" + newSpeedNeedle.height + " " +newSpeedNeedle.y
+            text: "km/h"
             font.pixelSize: Math.round(mainwind.width * 0.010)//20
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignTop

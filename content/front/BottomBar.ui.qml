@@ -67,12 +67,11 @@ Item {
             Text {
                 id: songName
                 anchors.top: parent.top
-                anchors.topMargin: 5
-                width: Math.round(mainwind.width * 0.185)//355
-                height: Math.round(mainwind.width * 0.015)//29
+                anchors.topMargin: 7
+                anchors.right: parent.right
                 color: "white"
                 text: "Crossroad Of Yesterday"
-                font.pixelSize: Math.round(mainwind.width * 0.015)//1920//24
+                font.pixelSize: Math.round(mainwind.width * 0.014)//1920//24
                 horizontalAlignment: Text.AlignRight
                 verticalAlignment: Text.AlignTop
                 wrapMode: Text.Wrap
@@ -82,13 +81,12 @@ Item {
 
             Text {
                 id: artistName
-                anchors.top: parent.bottom
+                anchors.top: songName.bottom
                 anchors.topMargin: Math.round(mainwind.width * 0.0025)
-                width: Math.round(mainwind.width * 0.185)//355
-                height: Math.round(mainwind.width * 0.009)//17
+                anchors.right: parent.right
                 color: "#d3d3d3"
                 text: "QUICK TORCH"
-                font.pixelSize: Math.round(mainwind.width * 0.011)//1920//24//14
+                font.pixelSize: Math.round(mainwind.width * 0.009)//1920//24//14
                 horizontalAlignment: Text.AlignRight
                 verticalAlignment: Text.AlignTop
                 wrapMode: Text.Wrap
@@ -100,8 +98,6 @@ Item {
 
     Row {
         id: row
-        width: 572
-        height: 46
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
         anchors.leftMargin: 32

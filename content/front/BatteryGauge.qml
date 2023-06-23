@@ -42,8 +42,6 @@ Item {
 
     Item {
         id: power
-//        x: 291
-//        y: 318
         width: parseInt(Math.round(mainwind.width * 0.126)) //241
         height: parseInt(Math.round(mainwind.height * 0.1694)) //122
         anchors.verticalCenter: parent.verticalCenter

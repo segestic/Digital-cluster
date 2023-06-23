@@ -9,8 +9,6 @@ Item {
     property int currentTemp: 27
     Text {
         id: temperatureValue
-//        x: 0
-//        y: 0
         width: 72
         height: 29
         color: "white"

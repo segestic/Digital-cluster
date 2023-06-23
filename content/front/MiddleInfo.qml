@@ -6,11 +6,11 @@ Item {
     id: middleInfo
 
     //debug
-    QtObject{
-        id:mainwind
-        property real width: 1350
-        property real height: Math.round(width*0.4)
-    }
+//    QtObject{
+//        id:mainwind
+//        property real width: 1350
+//        property real height: Math.round(width*0.4)
+//    }
 
     width: Math.round(mainwind.width * 0.25)
     height: Math.round(mainwind.height)
@@ -20,7 +20,7 @@ Item {
         id: innerbackg
         width: parent.width
         height: parent.height * 0.75
-        color: "white"
+        color: "green"
         opacity: 0.3
         anchors.verticalCenter: parent.verticalCenter
         radius: Math.round(mainwind.width * 0.04)
@@ -53,7 +53,7 @@ Item {
     Text {
         id: keyInfo2
         color: "black"
-        text: "TurnLeftIndicator - Right Key"
+        text: "TurnRightIndicator - Right Key"
         font.pixelSize: Math.round(mainwind.width * 0.01)
         horizontalAlignment: Text.AlignLeft
         verticalAlignment: Text.AlignTop
@@ -83,7 +83,7 @@ Item {
     Text {
         id: keyInfo4
         color: "black"
-        text: "Increase Speed - UpKey"
+        text: "Hight Beam Indicator - Key H"
         font.pixelSize: Math.round(mainwind.width * 0.01)
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignTop
@@ -97,7 +97,7 @@ Item {
     Text {
         id: keyInfo5
         color: "black"
-        text: "Increase Speed - UpKey"
+        text: "Low Beam Indicator - Key J"
         font.pixelSize: Math.round(mainwind.width * 0.01)
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignTop
@@ -112,7 +112,7 @@ Item {
     Text {
         id: keyInfo6
         color: "black"
-        text: "Increase Speed - UpKey"
+        text: "Temperature - Key Y"
         font.pixelSize: Math.round(mainwind.width * 0.01)
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignTop
@@ -126,13 +126,83 @@ Item {
     Text {
         id: keyInfo7
         color: "black"
-        text: "Increase Speed - UpKey"
+        text: "Odometer value - Key O"
         font.pixelSize: Math.round(mainwind.width * 0.01)
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignTop
         wrapMode: Text.Wrap
         font.weight: Font.Normal
         anchors.bottom: keyInfo6.top
+        anchors.bottomMargin: Math.round(mainwind.width * 0.008)
+        anchors.horizontalCenter: parent.horizontalCenter
+        z: 1
+    }
+    Text {
+        id: keyInfo8
+        color: "black"
+        text: "Gear Position - Key G"
+        font.pixelSize: Math.round(mainwind.width * 0.01)
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignTop
+        wrapMode: Text.Wrap
+        font.weight: Font.Normal
+        anchors.bottom: keyInfo7.top
+        anchors.bottomMargin: Math.round(mainwind.width * 0.008)
+        anchors.horizontalCenter: parent.horizontalCenter
+        z: 1
+    }
+    Text {
+        id: keyInfo9
+        color: "black"
+        text: "Seat Belt Indicator - Key S"
+        font.pixelSize: Math.round(mainwind.width * 0.01)
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignTop
+        wrapMode: Text.Wrap
+        font.weight: Font.Normal
+        anchors.bottom: keyInfo8.top
+        anchors.bottomMargin: Math.round(mainwind.width * 0.008)
+        anchors.horizontalCenter: parent.horizontalCenter
+        z: 1
+    }
+    Text {
+        id: keyInfo10
+        color: "black"
+        text: "Lane Centering Indicator - Key M"
+        font.pixelSize: Math.round(mainwind.width * 0.01)
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignTop
+        wrapMode: Text.Wrap
+        font.weight: Font.Normal
+        anchors.bottom: keyInfo9.top
+        anchors.bottomMargin: Math.round(mainwind.width * 0.008)
+        anchors.horizontalCenter: parent.horizontalCenter
+        z: 1
+    }
+    Text {
+        id: keyInfo11
+        color: "black"
+        text: "Lane Keeping Indicator - Key K"
+        font.pixelSize: Math.round(mainwind.width * 0.01)
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignTop
+        wrapMode: Text.Wrap
+        font.weight: Font.Normal
+        anchors.bottom: keyInfo10.top
+        anchors.bottomMargin: Math.round(mainwind.width * 0.008)
+        anchors.horizontalCenter: parent.horizontalCenter
+        z: 1
+    }
+    Text {
+        id: keyInfo12
+        color: "black"
+        text: "Speed Limiter Indicator - Key T"
+        font.pixelSize: Math.round(mainwind.width * 0.01)
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignTop
+        wrapMode: Text.Wrap
+        font.weight: Font.Normal
+        anchors.bottom: keyInfo11.top
         anchors.bottomMargin: Math.round(mainwind.width * 0.008)
         anchors.horizontalCenter: parent.horizontalCenter
         z: 1
