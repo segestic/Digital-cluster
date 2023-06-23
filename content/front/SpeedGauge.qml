@@ -120,7 +120,7 @@ Item {
             //anchors.horizontalCenterOffset: 21
             anchors.top: speedValue.bottom
             anchors.topMargin: -20
-            width: Math.round(mainwind.width * 0.025) //48
+            width: Math.round(mainwind.width * 0.031) //48
             height: Math.round(mainwind.width * 0.0125)//24
             //color: Themes.currentTheme == 'darkMode' ? "white" : "#000000"
             color: "white"
