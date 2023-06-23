@@ -110,6 +110,7 @@
         <file>content/front/OdometerController.qml</file>
         <file>content/front/Clock.qml</file>
         <file>content/front/BottomBar.ui.qml</file>
+        <file>content/front/MiddleInfo.qml</file>        
         <file>imports/SvgPathItem.qml</file>
         <file>content/front/Odometer.ui.qml</file>
         <file>imports/ClockController.qml</file>
