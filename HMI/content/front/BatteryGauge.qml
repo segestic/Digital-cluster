@@ -73,7 +73,6 @@ Item {
             verticalAlignment: Text.AlignTop
             wrapMode: Text.Wrap
             anchors.top: powerLabel.bottom
-            //anchors.topMargin: Math.round(mainwind.width * 0.010)
             anchors.horizontalCenter: parent.horizontalCenter
             fontSizeMode: Text.FixedSize
             font.weight: Font.Normal

@@ -5,16 +5,16 @@ import QtQuick3D 1.15
 import QtQuick3D.Effects 1.15
 
 
-import QtQuick3D.AssetUtils
-import QtQuick3D.Helpers
-import QtQuick3D.Particles3D
+//import QtQuick3D.AssetUtils 1.15
+//import QtQuick3D.Helpers 1.15
+//import QtQuick3D.Particles3D 1.15
 
 
 
 
-//import Qt3D.Core 2.0
-//import Qt3D.Render 2.15
-//import Qt3D.Extras 2.15
+import Qt3D.Core 2.15
+import Qt3D.Render 2.15
+import Qt3D.Extras 2.15
 
 Entity {
     id: rootNode

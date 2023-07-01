@@ -2,8 +2,6 @@ import QtQuick 2.12
 
 Item {
     id: odometerController
-//    width: odometer.width
-//    height: odometer.height
     width: 72
     height: 46
 

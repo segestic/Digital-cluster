@@ -2,9 +2,31 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import "../../imports"
 import "../Adas"
+import "simulator.js" as Auto
 
 Item {
     id: container
+
+    ////backend properties
+
+    property int speed: m_communicationHandler.speed
+    property int vehicleRPM: m_communicationHandler.vehicleRPM
+    property int motorTorque: m_communicationHandler.motorTorque
+    property bool ledStatus: m_communicationHandler.ledStatus
+    property bool temperatureWarning: m_communicationHandler.temperatureWarning
+    property int batteryState: m_communicationHandler.batteryState
+    property int batteryTripDistance: m_communicationHandler.batteryTripDistance
+    property real odometer: m_communicationHandler.odometer
+    property int motorTemp: m_communicationHandler.motorTemp
+    property int controllerTemp: m_communicationHandler.controllerTemp
+    property bool leftIndicator: m_communicationHandler.leftIndicator
+    property bool rightIndicator: m_communicationHandler.rightIndicator
+    property int power: m_communicationHandler.power
+    property int batteryADAP: m_communicationHandler.batteryADAP
+    property bool isTemperatureError: m_communicationHandler.temperatureWarning
+    //end backend properties...
+
+    onSpeedChanged: console.log('speed changed', speed)
 
     function incrementNumber(num) {
       num++;
@@ -17,16 +39,9 @@ Item {
     width: mainwind.width
     height: mainwind.height// mainLoader.height
     Keys.onRightPressed: {speedguageLeft.increaseSpeed(1); (speedguageLeft.speed <= 200) ? bottomBar.odometerDistance += 4 : bottomBar.odometerDistance += 0}
-    Keys.onReleased: {
-        if (event.key == Qt.Key_Right) {
-            idleSpeed.start();
-            event.accepted = true;
-        }
-    }
     Keys.onLeftPressed: {speedguageLeft.decreaseSpeed(); (speedguageLeft.speed === 0) ? bottomBar.odometerDistance += 0 : bottomBar.odometerDistance += 1 }
     Keys.onDownPressed: { battguage.decreaseCharge() } //onDigit0Pressed
     Keys.onUpPressed: { battguage.increaseCharge() }
-    //Keys.onDigit0Pressed: {if (gear.currentDriveMode === 0) {gear.currentDriveMode = 1} else {gear.currentDriveMode = 0}  }
     Keys.onDigit0Pressed: {gear.currentDriveMode = (gear.currentDriveMode === 0) ? 1 : 0;}
     Keys.onPressed: { if (event.key === Qt.Key_N) {
                             range.currentRange +=1 ;
@@ -39,7 +54,7 @@ Item {
                         }
                         else if (event.key === Qt.Key_Y) {
                             bottomBar.currentTemp += 1
-                            //console.log("Key M pressed");
+                            //console.log("Key Y pressed");
                         }
                         else if (event.key === Qt.Key_L) {
                             tellTales.toggleVisibilityLeft()
@@ -68,9 +83,6 @@ Item {
                 }
 
     Keys.onTabPressed: {middleInfo.visible = (middleInfo.visible === false) ? true : false}
-    Component.onCompleted: {
-        forceActiveFocus()
-    }
 
     Image {
         id: backgrounddark
@@ -99,6 +111,7 @@ Item {
 //        }
         SpeedGauge {
             id:speedguageLeft
+            speed: container.speed
             anchors {
                 top: tellTales.top
             }
@@ -169,20 +182,16 @@ Item {
             anchors.rightMargin: 0
             anchors.leftMargin: 0
         }
+        Timer{
+            id: simulator
 
-        Timer {
-            id: idleSpeed
-            interval: 1000 // 1 second
-            running: true
+            running: false
             repeat: true
-            onTriggered: {
-                if (speedguageLeft.speed >= 1) {
-                    speedguageLeft.decreaseSpeed();
-                    bottomBar.odometerDistance += 1;
-                    //console.log("Value is decerasing!")
-                }
-            }
+            interval: 150 //console.log('simulator is triggered');
+            onTriggered: {Auto.increaseOrDecreaseBattery(); Auto.increaseOrDecreaseSpeed(); Auto.toggleIndicators(); Auto.toggleIndicators(); }//{mode++; mainModel.incrementSpeed(); mainModel.changeGear(); changeMode(mode)}
         }
-   }
+    }
+    //Component.onCompleted: {simulator.start()}
+    Component.onCompleted: {forceActiveFocus()} //Activate to use key-controls and comment out the above. simulator.start
 }
 

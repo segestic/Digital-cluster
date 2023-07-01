@@ -7,6 +7,8 @@ Window {
     height: Math.round(width*0.4)//720
     visible: true
     title: qsTr("Hello World")
+    //onWidthChanged: {console.log('width is ', width)}
+    //onHeightChanged: {console.log('height is ', height)}
 
 
     Loader {
@@ -18,7 +20,6 @@ Window {
 
     Component.onCompleted: {
             //slide trnsitions
-            //mainLoader.setSource("qrc:/src/Adas.ui.qml");
             mainLoader.setSource("qrc:/content/front/Screen01.qml");
 
         }

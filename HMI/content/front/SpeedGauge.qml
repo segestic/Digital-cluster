@@ -95,8 +95,6 @@ Item {
 
         Text {
             id: speedValue
-            //x: 0
-            //y: 0
             width: Math.round(mainwind.width * 0.098) //188
             height: Math.round(mainwind.width * 0.06) //115
             color: "#75bbf0" //"white"
@@ -107,20 +105,16 @@ Item {
             wrapMode: Text.Wrap
             font.styleName: "Regular"
             anchors.horizontalCenter: parent.horizontalCenter
-            //anchors.horizontalCenterOffset: 16
             font.weight: Font.Medium
             font.family: Constants.font.family
         }
 
         Text {
             id: speedLabel
-            //x: 60
-            //y: 98
             anchors.horizontalCenter: parent.horizontalCenter
-            //anchors.horizontalCenterOffset: 21
             anchors.top: speedValue.bottom
             anchors.topMargin: -20
-            width: Math.round(mainwind.width * 0.031) //48
+            width: Math.round(mainwind.width * 0.025) //48
             height: Math.round(mainwind.width * 0.0125)//24
             //color: Themes.currentTheme == 'darkMode' ? "white" : "#000000"
             color: "white"

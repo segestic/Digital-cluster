@@ -20,7 +20,7 @@ Item {
         id: innerbackg
         width: parent.width
         height: parent.height * 0.75
-        color: "green"
+        color: "#f6edc1"
         opacity: 0.3
         anchors.verticalCenter: parent.verticalCenter
         radius: Math.round(mainwind.width * 0.04)

@@ -3,13 +3,13 @@ import "../../imports"
 
 Item {
     id: time
-    width: 72
+    width: 62
     height: 46
     property string currentTime: timer.currentTime//ClockController.currentTime
 
     Text {
         id: timeValue
-        width: 80
+        width: 62
         height: 29
         color: "white"
         text: time.currentTime
@@ -24,7 +24,7 @@ Item {
     Text {
         id: timeLabel
         anchors.top: timeValue.bottom
-        width: 61
+        width: 34
         height: 17
         color: "#d3d3d3"
         text: "TIME"

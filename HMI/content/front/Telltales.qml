@@ -20,11 +20,9 @@ Rectangle {
         turnRight.opacity = (turnRight.opacity === 0.2) ? 1.0 : 0.2;
     }
     function toggleLowBeam() {
-        //turnLeft.visible = !turnLeft.visible;
         lowbeam.opacity = (lowbeam.opacity === 0.2) ? 1.0 : 0.2;
     }
     function toggleHighBeam() {
-        //turnLeft.visible = !turnLeft.visible;
         highbeam.opacity = (highbeam.opacity === 0.2) ? 1.0 : 0.2;
     }
     function toggleLaneCenteringAssist() {
@@ -56,7 +54,6 @@ Rectangle {
         anchors.left: turnLeft.right//parent.left
         anchors.leftMargin: 10 //Math.round(mainwind.width * 0.005)
         anchors.top: parent.top
-        //anchors.bottom: parent.bottom
         anchors.bottomMargin: 0
         anchors.topMargin: 0
         //anchors.rightMargin: 1681

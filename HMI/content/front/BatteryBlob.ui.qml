@@ -1,6 +1,4 @@
 import QtQuick 2.8
-//import QtQuick.Studio.Components 1.0
-//import QtQuick.Studio.Effects 1.0
 import QtGraphicalEffects 1.0
 import QtQuick.Timeline 1.0
 import "../../imports"

@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/sounds">
+        <file>sounds/loop_aggressive.wav</file>
+    </qresource>
+</RCC>

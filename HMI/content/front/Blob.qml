@@ -1,6 +1,5 @@
 import QtQuick 2.15
 import QtQuick.Timeline 1.0
-//import QtQuick.Studio.Components 1.0
 import "../../imports"
 
 
